@@ -1,5 +1,6 @@
 # JHSoundWaveView
-音波图，声波图
+sound wave view
+- 音波图，声波图
 
 ---
 
@@ -11,7 +12,7 @@
 
 ---
 
-# How
+# Usage
 ```
 JHSoundWaveConfig *config = [[JHSoundWaveConfig alloc] init];
 config.count = 26;
@@ -21,5 +22,7 @@ JHSoundWaveView *view = [[JHSoundWaveView alloc] initWithFrame:CGRectMake(100, 1
 ---
 
 # Log
+### 2018-11-22
+- upload.
 
-1.upload.(2018-11-22)
+---
