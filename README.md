@@ -22,6 +22,9 @@ JHSoundWaveView *view = [[JHSoundWaveView alloc] initWithFrame:CGRectMake(100, 1
 ---
 
 # Log
+### 2019-04-22
+- add 'radius'.
+
 ### 2018-11-22
 - upload.
 
