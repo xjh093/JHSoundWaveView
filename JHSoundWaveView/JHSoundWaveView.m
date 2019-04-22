@@ -50,6 +50,7 @@
 @property (nonatomic,  strong) UIView *bar;
 @property (nonatomic,  strong) UIColor *color;
 @property (nonatomic,  strong) NSTimer *timer;
+@property (nonatomic,  assign) CGFloat radius;
 @end
 
 @implementation JHSoundWaveBar
@@ -103,6 +104,12 @@
     _bar.backgroundColor = color;
 }
 
+- (void)setRadius:(CGFloat)radius{
+    _radius = radius;
+    _bar.clipsToBounds = YES;
+    _bar.layer.cornerRadius = radius;
+}
+
 - (NSTimer *)timer{
     if (!_timer) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:_duration target:self selector:@selector(animation) userInfo:nil repeats:YES];
@@ -141,6 +148,7 @@
         JHSoundWaveBar *bar = [[JHSoundWaveBar alloc] initWithFrame:CGRectMake(_config.leftMargin+(_config.width+_config.space)*i, 0, _config.width, CGRectGetHeight(self.bounds))];
         bar.duration = 1+0.1*(i%_config.count*0.25);
         bar.color = _config.color;
+        bar.radius = _config.radius;
         [self addSubview:bar];
     }
     
