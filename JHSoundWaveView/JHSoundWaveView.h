@@ -42,7 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,  assign) CGFloat  leftMargin;
 /// 间距,默认2
 @property (nonatomic,  assign) CGFloat  space;
-
+/// 圆角
+@property (nonatomic,  assign) CGFloat radius;
 @end
 
 @interface JHSoundWaveView : UIView
