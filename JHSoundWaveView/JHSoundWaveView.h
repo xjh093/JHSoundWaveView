@@ -50,6 +50,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithFrame:(CGRect)frame config:(JHSoundWaveConfig *)config;
 
+- (void)startAnimation;
+- (void)stopAnimation;
+
 @end
 
 NS_ASSUME_NONNULL_END
