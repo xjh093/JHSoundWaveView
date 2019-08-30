@@ -51,6 +51,9 @@
 @property (nonatomic,  strong) UIColor *color;
 @property (nonatomic,  strong) NSTimer *timer;
 @property (nonatomic,  assign) CGFloat radius;
+
+- (void)shouldStartAnimation:(BOOL)flag;
+
 @end
 
 @implementation JHSoundWaveBar
@@ -68,8 +71,6 @@
     if (!newSuperview) {
         [_timer invalidate];
         _timer = nil;
-    }else{
-        [self.timer fire];
     }
 }
 
@@ -97,6 +98,16 @@
             _bar.frame = frame;
         }];
     }];
+}
+
+- (void)shouldStartAnimation:(BOOL)flag
+{
+    if (flag) {
+        [self.timer fire];
+    }else{
+        [self.timer invalidate];
+        _timer = nil;
+    }
 }
 
 - (void)setColor:(UIColor *)color{
@@ -159,4 +170,22 @@
     self.frame = frame;
 }
 
+- (void)shouldStartAnimation:(BOOL)flag
+{
+    for (JHSoundWaveBar *subview in self.subviews) {
+        [subview shouldStartAnimation:flag];
+    }
+}
+
+- (void)startAnimation
+{
+    [self shouldStartAnimation:YES];
+}
+
+- (void)stopAnimation
+{
+    [self shouldStartAnimation:NO];
+}
+
 @end
+
