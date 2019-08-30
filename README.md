@@ -22,6 +22,12 @@ JHSoundWaveView *view = [[JHSoundWaveView alloc] initWithFrame:CGRectMake(100, 1
 ---
 
 # Log
+
+### 2019-08-30
+- add method:
+    - startAnimation;
+    - stopAnimation;
+
 ### 2019-04-22
 - add 'radius'.
 
